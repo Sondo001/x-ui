@@ -143,7 +143,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
                                                 Đặt Lại Dung Lượng</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">
 
 					    <div class="my-2"></div>
                                                 <a href="#" @click="resetallTraffic(dbInbounds)" class="btn btn-danger btn-icon-split btn-sm">
@@ -186,11 +186,31 @@
                 </transition>
                 <transition name="list" appear>
 		<a-row style="margin-left:24px; margin-right:24px;">
-                    <a-card hoverable>
-                        <div slot="title">
-                            <a-button type="primary" icon="plus" @click="openAddInbound"></a-button>
-                        </div>
-                        <a-input v-model="searchKey" placeholder="Tìm kiếm" autofocus style="max-width: 300px"></a-input>
+
+			    <!-- Dropdown Card Example -->
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Danh Sách Server</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Menu:</div>
+                                            <a class="dropdown-item" @click="openAddInbound" href="#">Tạo Server</a>
+                                            <a class="dropdown-item" @click="resetallTraffic(dbInbounds)" href="#">Đặt Lại Dung Lượng</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">None</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+
                         <a-table :columns="columns" :row-key="dbInbound => dbInbound.id"
                                  :data-source="dbInbounds"
                                  :loading="spinning" :scroll="{ x: 1500 }"
@@ -255,7 +275,10 @@
                                 <a-tag v-else color="green">Vô thời hạn</a-tag>
                             </template>
                         </a-table>
-                    </a-card>
+
+		       </div>
+                    </div>
+
 		</a-row>
                 </transition>
             </a-spin>
