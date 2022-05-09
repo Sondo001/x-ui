@@ -65,7 +65,8 @@
                 </nav>
                 <!-- End of Topbar -->
 
-                <transition name="list" appear style="margin-left:24px; margin-right:24px;">
+                <transition name="list" appear>
+		<a-row style="margin-left:24px; margin-right:24px;">
 
 		    <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -76,8 +77,10 @@
                     <a-tag v-if="false" color="red" style="margin-bottom: 10px">
 			Vui lòng truy cập cài đặt bảng điều khiển càng sớm càng tốt để sửa đổi tên người dùng và mật khẩu, nếu không có thể có nguy cơ rò rỉ thông tin tài khoản.
                     </a-tag>
+		</a-row>
                 </transition>
                 <transition name="list" appear>
+		<a-row style="margin-left:24px; margin-right:24px;">
                     <a-card hoverable style="margin-bottom: 20px;">
                         <a-row>
                             <a-col :xs="24" :sm="24" :lg="12">
@@ -97,8 +100,10 @@
                             </a-col>
                         </a-row>
                     </a-card>
+		</a-row>
                 </transition>
                 <transition name="list" appear>
+		<a-row style="margin-left:24px; margin-right:24px;">
                     <a-card hoverable>
                         <div slot="title">
                             <a-button type="primary" icon="plus" @click="openAddInbound"></a-button>
@@ -169,6 +174,7 @@
                             </template>
                         </a-table>
                     </a-card>
+		</a-row>
                 </transition>
             </a-spin>
 
