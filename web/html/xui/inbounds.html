@@ -81,7 +81,86 @@
                 </transition>
                 <transition name="list" appear>
 		<a-row style="margin-left:24px; margin-right:24px;">
-                    <a-card hoverable style="margin-bottom: 20px;">
+
+			<div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Tổng Data Thông Qua VPN</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">↑ [[ sizeFormat(total.up) ]] | ↓ [[ sizeFormat(total.down) ]] </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+			<div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Tổng Data Đã Dùng</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"> [[ sizeFormat(total.up + total.down) ]] </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+			<div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Tổng Số Server</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"> [[ dbInbounds.length ]] </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+			<div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Đặt Lại Dung Lượng</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+
+					    <div class="my-2"></div>
+                                                <a href="#" @click="resetallTraffic(dbInbounds)" class="btn btn-danger btn-icon-split">
+                                                  <span class="icon text-white-50">
+                                                       <i class="fas fa-trash"></i>
+                                                  </span>
+                                                <span class="text">Xóa Toàn Bộ Data</span>
+                                                </a>
+
+					    </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                <!--    <a-card hoverable style="margin-bottom: 20px;">
                         <a-row>
                             <a-col :xs="24" :sm="24" :lg="12">
                                 Tổng Lưu Lượng Data ↑|↓：
@@ -99,7 +178,7 @@
                                 <a-button @click="resetallTraffic(dbInbounds)">Đặt lại tất cả lưu lượng</a-button>
                             </a-col>
                         </a-row>
-                    </a-card>
+                    </a-card> -->
 		</a-row>
                 </transition>
                 <transition name="list" appear>
